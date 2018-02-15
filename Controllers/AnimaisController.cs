@@ -24,7 +24,7 @@ namespace chdog.Controllers
         [HttpGet ("/api/animais")]
         public async Task<IEnumerable<AnimalResource>> GetAnimais() 
         {
-            var animais = await context.Animais.Include (p => p.Raca).ToListAsync();
+            var animais = await context.Animais.Include(p => p.Raca).ToListAsync();
 
             return mapper.Map<List<Animal>, List<AnimalResource>>(animais);
         }
